@@ -74,3 +74,11 @@ export(
 )
 
 export(PACKAGE ${PROJECT_NAME})
+
+add_library(${PROJECT_NAME}s STATIC 
+		"${SOURCE_DIR}/gl3w.c"
+		"${HEADER_DIR}/GL/gl3w.h"
+		"${HEADER_DIR}/GL/glcorearb.h"
+)
+target_include_directories(${PROJECT_NAME}s PUBLIC "${HEADER_DIR}")
+SET_TARGET_PROPERTIES(${PROJECT_NAME}s PROPERTIES DEBUG_POSTFIX d)
